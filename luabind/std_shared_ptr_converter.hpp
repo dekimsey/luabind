@@ -16,7 +16,7 @@
 # include <luabind/shared_ptr_converter.hpp>
 # include <memory> // shared_ptr
 
-# if BOOST_VERSION >= 105300
+# if BOOST_VERSION >= 105300 && !((defined(__clang__) && defined(BOOST_NO_CXX11_SMART_PTR)))
 #  include <luabind/detail/has_get_pointer.hpp>
 
 #  include <boost/get_pointer.hpp>
